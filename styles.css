@@ -9,6 +9,7 @@
 body{
     width: 100%;
     height: 100%;
+    /* background-color: #efefef; */
     overflow-x: hidden;
 }
 
@@ -108,10 +109,11 @@ nav ul li a{
     nav ul .close{
         display: block;
         position: absolute;
-        left: 0;
-        top: 0;
+        left: 10px;
+        top: 10px;
         background: rgba(252, 2, 2, 0.322);
         padding: 5px;
+        font-size: 30px;
         border-radius: 50%;
     }
 
@@ -125,7 +127,7 @@ nav ul li a{
 #header {
     width: 100%;
     min-height: 100vh;
-    background-image: linear-gradient(rgba(9,0,77,0.65),rgba(9,0,77,0.65)), url(./assets/images/2150952336.jpg);
+    background-image: linear-gradient(rgba(9,0,77,0.65),rgba(9,0,77,0.65)), url(./assets/images/1000_F_480143221_NwhIRSX9yj2FZX0F2gCdes15XllISh5n.jpg);
     background-size: cover;
     background-position: center;
     padding: 10px 8%;
@@ -166,7 +168,7 @@ nav ul li a{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
 }
 
 #presentation .title{
@@ -193,6 +195,10 @@ nav ul li a{
 
 .intro-items .item-2{
     flex-basis: 60%;
+}
+
+.intro-items .item-2 h2{
+    margin-bottom: 50px;
 }
 
 /* presentation section styling */
@@ -228,16 +234,27 @@ nav ul li a{
     width: 100%;
     padding-left: 70px;
     padding-right: 70px;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .subtitle{
+    position: relative;
     width: 100%;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 100px;
+}
+
+.subtitle::after{
+    position: absolute;
+    content: "";
+    bottom: -10px;
+    left: 50%;
+    right: 50%;
+    border: 2px solid rgb(160, 42, 42);
+    width: 100px;
 }
 
 .subtitle h2{
@@ -247,9 +264,14 @@ nav ul li a{
 
 #skills .skills-set{
     display: grid;
-    grid-template-rows: 200px;
-    grid-template-columns: 350px 350px ;
+    grid-template-rows:  350px 350px;
+    grid-template-columns: 350px 350px 350px ;
     gap: 50px;
+}
+
+.skill-card h2{
+    margin-top: 14px;
+    margin-bottom: 14px;
 }
 
 
@@ -290,10 +312,12 @@ nav ul li a{
 
 
 .project-cards{
+    max-width: 1200px;
     display: grid;
     grid-template-rows: 300px 300px ;
-    grid-template-columns: 250px 250px 250px;
-    gap: 50px;
+    grid-template-columns: 350px 350px 350px;
+    column-gap: 50px;
+    row-gap: 50px;
 }
 
 
@@ -303,6 +327,7 @@ nav ul li a{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-bottom: 25px;
 }
 
 .project-card2{
@@ -347,6 +372,12 @@ nav ul li a{
     width: 100%;
 }
 
+.project-description{
+    background: linear-gradient(rgba(9,0,77,0.65),rgba(9,0,77,0.65));
+    padding: 17px 12px;
+    color: #fff;
+}
+
 /* project media query */
 @media (max-width: 768px) {
     .project-cards {
@@ -364,30 +395,203 @@ nav ul li a{
 
 /* testimonial section style */
 
-/* #testimony{
+#testimony{
     width: 100%;
     padding-left: 70px;
     padding-right: 70px;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.testimony-items{
+.testimony-slider{
+    max-width: 1120px;
+    width: 100%;
+    /* background: grey; */
+    background-color: #efefef;
+    padding: 40px 15px;
+    display: flex;
+    justify-content: space-between;
+    gap: 45px;
+}
+
+.testimony-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 14px;
+}
+
+.testimony-text h2{
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.testimony-text p{
+    font-size: 14px;
+    color: #707070;
+    text-align: center;
+}
+
+.testimony-image{
+    /* position: relative; */
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 3px;
+}
+
+
+.testimony-item{
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px 15px;
+    border-radius: 25px;
+    background: #fff;
+}
+
+
+
+
+
+.testimony-image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #4070f4;
+}
+
+
+@media (max-width: 768px) {
+    .testimony-slider{
+        flex-wrap: wrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+/* contact form styling */
+
+#contact{
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 70px;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-container{
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-
-.testimony-item{
-    min-width: 350px;
+.contact-container .contact-info, .contact-form{
+    flex-basis: 50%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    background: #efefef;
 }
 
-@media (max-width: 768px) {
-    .testimony-items{
+.contact-container .contact-info h2{
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.contact-container .contact-info ul{
+    text-align: center;
+    padding-bottom: 24px;
+}
+
+
+.link{
+    display: flex;
+    justify-content: center;
+}
+
+.link ul{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    gap: 25px;
+}
+
+.link ul li{
+    background: #fff;
+    color: #000;
+    padding: 19px ;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.link ul li:hover{
+    transform: translateY(-10px);
+}
+
+.contact-form input{
+    background: #fff;
+    height: 35px;
+    border: none;
+    padding: 12px;
+    margin-bottom: 14px;
+    border-radius: 24px;
+}
+
+.contact-form textarea{
+    border-radius: 24px;
+    background: #fff;
+    height: 100px;
+    border: none;
+    margin-bottom: 45px;
+    padding: 12px;
+}
+
+.contact-form .btn{
+    border: none;
+    border-radius: 25px;
+    background: #fff;
+    padding: 12px 0;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+.contact-form .btn:hover{
+    background: #cccccc;
+}
+
+@media (max-width: 768px){
+
+
+    .contact-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
         flex-wrap: wrap;
     }
-} */
+
+    .contact-container .contact-info, .contact-form{
+        flex-basis: 100%;
+    }
+
+
+}
+
+
+
+
 
