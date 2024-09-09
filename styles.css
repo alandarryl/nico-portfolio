@@ -592,6 +592,19 @@ nav ul li a{
 }
 
 
+/* footer styling */
 
+#footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding:25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background:  rgba(9,0,77,0.3);
+}
 
 
